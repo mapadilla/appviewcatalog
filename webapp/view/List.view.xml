@@ -1,0 +1,24 @@
+<mvc:View controllerName="appviewcatalog.controller.List"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page title="Vista List" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <VBox> 
+                <OverflowToolbar >
+                    <SearchField width="100%" liveChange=".onSearch" placeholder="Buscar..."/>
+                </OverflowToolbar>
+                    <List id="productList" headerText="Productos" 
+                    items="{path:'mProduct>/ProductCollection'}" 
+                    mode="SingleSelectMaster" 
+                    itemPress="onPressProduct"
+                    growing="true"
+                    growingThreshold="10"
+                    growingScrollToLoad="false"
+                    >
+                        <StandardListItem title="{mProduct>Name}" description="{mProduct>Description}" 
+                        icon="{mProduct>ProductPicUrl}" counter="{mProduct>Quantity}" type="Active"/>
+                    </List>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

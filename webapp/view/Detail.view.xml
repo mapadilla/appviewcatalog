@@ -1,0 +1,78 @@
+<mvc:View 
+    controllerName="appviewcatalog.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:layout="sap.ui.layout"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    >
+    <Page title="Vista Detalle" showNavButton="true" navButtonPress="onNavBack">
+       <uxap:ObjectPageLayout >
+            <uxap:headerTitle>
+                <uxap:ObjectPageDynamicHeaderTitle >
+                    <uxap:snappedHeading>
+                        <FlexBox fitContainer="true" alignItems="Center">
+                            <Avatar src="{mProduct>ProductPicUrl}" class="sapUiTinyMarginEnd"/>
+                            <Title text="{mProduct>ProductId}"/>
+                        </FlexBox>
+                    </uxap:snappedHeading>
+
+                    <uxap:snappedContent>
+                        <Title text="{mProduct>Name} - {mProduct>Category}" wrapping="true"/>
+                    </uxap:snappedContent>
+
+                    <uxap:expandedContent>
+                        <Title text="{mProduct>ProductId} - {mProduct>Name}" wrapping="true"/>
+                    </uxap:expandedContent>
+                </uxap:ObjectPageDynamicHeaderTitle>
+            </uxap:headerTitle>
+
+            <uxap:headerContent>
+                <layout:VerticalLayout >
+                    <Avatar src="{mProduct>ProductPicUrl}" class="sapUiTinyMarginEnd"/>
+                </layout:VerticalLayout>
+                <layout:VerticalLayout>
+                    <Label text="{mProduct>Category}"/>
+                    <Label text="{mProduct>MainCategory}"/>
+                    <Label text="{mProduct>SupplierName}"/>
+                </layout:VerticalLayout>
+            </uxap:headerContent>
+
+            <uxap:sections>
+                <uxap:ObjectPageSection>
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Descripción">
+                            <uxap:blocks>
+                                <Text text="{mProduct>Description}"/>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Peso">
+                            <uxap:blocks>
+                                <Text text="{mProduct>WeightMeasure} {mProduct>WeightUnit}"/>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Precio">
+                            <uxap:blocks>
+                                <Text text="{mProduct>Price} {mProduct>CurrencyCode}"/>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection title="Fecha de Venta">
+                            <uxap:blocks>
+                                <Text text="{mProduct>DateOfSale}"/>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+            </uxap:sections>
+
+       </uxap:ObjectPageLayout>
+    </Page>
+</mvc:View>
