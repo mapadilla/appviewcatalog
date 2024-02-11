@@ -1,11 +1,10 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/core/UIComponent"
+    "./Base.controller"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, UIComponent) {
+    function (Controller) {
         "use strict";
 
         return Controller.extend("appviewcatalog.controller.Form", {

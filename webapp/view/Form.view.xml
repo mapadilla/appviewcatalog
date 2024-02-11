@@ -1,9 +1,69 @@
 <mvc:View controllerName="appviewcatalog.controller.Form"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m" xmlns:f="sap.f">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
         <content>
-            <Text text="Soy la vista Form" />
+            <l:Grid defaultIndent="XL3 L3 M0 S0" defaultSpan="XL6 L6 M12 S12">
+                <VBox class="sapUiSmallMargin" alignContent="SpaceAround">
+                    <f:Form id="frmGeneral" editable="true">
+                        <f:title>
+                            <core:Title text="General Info"/>
+                        </f:title>
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"/>
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer >
+                                <f:formElements>
+                                    <f:FormElement label="Product ID">
+                                        <f:fields>
+                                            <Input id="txtProductId" value=""/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Main Category - Category">
+                                        <f:fields>
+                                            <ComboBox id="cmbMainCategory" items="{path:'mProduct>/MainCategories', sorter:{path:'text'}}">
+                                                <core:Item key="{mProduct>key}" text="{mProduct>text}"/>
+                                            </ComboBox>
+                                            <ComboBox id="cmbCategory" items="{path:'mProduct>/Categories', sorter:{path:'text'}}">
+                                                <core:Item key="{mProduct>key}" text="{mProduct>text}"/>
+                                            </ComboBox>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Name">
+                                        <f:fields>
+                                            <Input id="txtName" value=""/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Description">
+                                        <f:fields>
+                                            <Input id="txtDescription" value=""/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Supplier Name">
+                                        <f:fields>
+                                            <Input id="txtSupplier" value=""/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </VBox>
+            </l:Grid>
         </content>
     </Page>
 </mvc:View>
