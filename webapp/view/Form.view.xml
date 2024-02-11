@@ -16,7 +16,7 @@
                                 labelSpanL="3"
                                 labelSpanM="3"
                                 labelSpanS="12"
-                                adjustLabelSpan="true"
+                                adjustLabelSpan="false"
                                 emptySpanXL="4"
                                 emptySpanL="4"
                                 emptySpanM="4"
@@ -27,7 +27,7 @@
                                 singleContainerFullSize="false"/>
                         </f:layout>
                         <f:formContainers>
-                            <f:FormContainer >
+                            <f:FormContainer>
                                 <f:formElements>
                                     <f:FormElement label="Product ID">
                                         <f:fields>
@@ -63,8 +63,106 @@
                             </f:FormContainer>
                         </f:formContainers>
                     </f:Form>
+
+                    <f:Form id="frmWeight" editable="true" class="sapUiSmallMarginTop">
+                        <f:title>
+                            <core:Title text="Weight"/>
+                        </f:title>
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"/>
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="Weight Measure">
+                                        <f:fields>
+                                            <Input id="txtWeightMeasure"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Weight Unit">
+                                        <f:fields>
+                                            <RadioButtonGroup id="rbgWeightUnit" columns="2">
+                                                <RadioButton text="KG" select="true"/>
+                                                <RadioButton text="LB"/>
+                                            </RadioButtonGroup>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                    <f:Form id="frmDetails" editable="true" class="sapUiSmallMarginTop">
+                        <f:title>
+                            <core:Title text="Details"/>
+                        </f:title>
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                                labelSpanXL="3"
+                                labelSpanL="3"
+                                labelSpanM="3"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="4"
+                                emptySpanL="4"
+                                emptySpanM="4"
+                                emptySpanS="0"
+                                columnsXL="1"
+                                columnsL="1"
+                                columnsM="1"
+                                singleContainerFullSize="false"/>
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer>
+                                <f:formElements>
+                                    <f:FormElement label="Date of Sale">
+                                        <f:fields>
+                                            <DatePicker id="dtSale" placeholder="Enter Date" class="sapUiSmallMarginBottom"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Quantity">
+                                        <f:fields>
+                                            <Input id="txtQuantity" value=""/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Currency Code">
+                                        <f:fields>
+                                            <RadioButtonGroup id="rbgCurrency" columns="2" valueState="Success">
+                                                <RadioButton text="EUR" selected="true"/>
+                                                <RadioButton text="USD"/>
+                                            </RadioButtonGroup>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Price">
+                                        <f:fields>
+                                            <Input id="txtPrice" value=""/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
                 </VBox>
             </l:Grid>
         </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button id="btnSubmit" text="Submit" type="Accept" press="onSubmit"/>
+                <Button id="btnCancel" text="Cancel" type="Reject" press="onReject"/>
+            </Toolbar>
+        </footer>
     </Page>
 </mvc:View>
