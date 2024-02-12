@@ -26,6 +26,10 @@ sap.ui.define([
             }else{
                 this.getRouter().navTo("RouteMain");
             }
+        },
+
+        getById: function(sId) {
+            return this.getView().byId(sId);
         }
     });
 });

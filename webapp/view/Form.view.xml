@@ -129,7 +129,16 @@
                                 <f:formElements>
                                     <f:FormElement label="Date of Sale">
                                         <f:fields>
-                                            <DatePicker id="dtSale" placeholder="Enter Date" class="sapUiSmallMarginBottom"/>
+                                            <DatePicker id="dtSale" placeholder="Enter Date" class="sapUiSmallMarginBottom" valueFormat="yyyy-MM-dd"/>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    <f:FormElement label="Available Status">
+                                        <f:fields>
+                                            <Switch id="swtStatus" state="true" customTextOff="NO" customTextOn="YES"> 
+                                                <layoutData>
+                                                    <FlexItemData growFactor="1"/>
+                                                </layoutData>
+                                            </Switch>
                                         </f:fields>
                                     </f:FormElement>
                                     <f:FormElement label="Quantity">
