@@ -54,6 +54,30 @@ sap.ui.define([
                 return oNewProduct;            
             },
 
+            validateFields: function(){
+                var aForms = ["frmGeneral", "frmWeight", "frmDetails"];
+                var aValidated = [];
+
+                aForms.forEach(oForm=>{
+                    let aFormElements = this.getById(oForm).getFormContainers()[0].getFormElements();
+                    aFormElements.forEach(oFormElement=>{
+                        let aFields = oFormElement.getFields();
+                        aFields.forEach(oField=>{
+                            if(oField.getValue){
+                                let sFieldId = oField.getId().split("Form--")[1];
+                                let valid = oField.getValue() !== "" ? true : false;
+
+                                if(!valid){
+                                    aValidated.push({fieldId:sFieldId, state:valid});
+                                    this.getById(sFieldId).setValueState("Error");;
+                                }
+                            }
+                        })
+                    })
+                });
+                return aValidated.length;
+            },
+
             clearInputs: function(){
                 this.getById("txtProductId").setValue("");
                 this.getById("cmbMainCategory").setValue("");
@@ -75,8 +99,21 @@ sap.ui.define([
                 this.onNavTo("RouteMain");
             },
 
+            changeValueState: function(oEvent){
+                let oValue = oEvent.getSource().getValue();
+                if(oValue){
+                    oEvent.getSource().setValueState("None");
+                }
+            },
+
             onSubmit: function() {
                 const _this = this;
+
+                let nValidatedFields = this.validateFields();
+                if(nValidatedFields){
+                    return;
+                }
+
                 let oNewProduct = this.getValues();
 
                 let arrProductColl = this.getView().getModel("mProduct").getData().ProductCollection;
