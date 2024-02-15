@@ -1,0 +1,5 @@
+<c:FragmentDefinition xmlns="sap.m" xmlns:c="sap.ui.core" 
+xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <Button text="Light" press="onTheme" app:tipoTema="L" />
+    <Button text="Dark" press="onTheme" app:tipoTema="D" />
+</c:FragmentDefinition>

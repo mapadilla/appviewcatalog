@@ -3,6 +3,9 @@
     xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" 
     displayBlock="true" busyIndicatorDelay="0">
     <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+        <headerContent>
+            <core:Fragment fragmentName="appviewcatalog.view.fragments.ThemeButton" type="XML"/>
+        </headerContent>
         <content>
             <l:Grid defaultIndent="XL3 L3 M0 S0" defaultSpan="XL6 L6 M12 S12">
                 <VBox class="sapUiSmallMargin" alignContent="SpaceAround">
