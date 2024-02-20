@@ -3,6 +3,7 @@
     xmlns="sap.m" xmlns:core="sap.ui.core">
     <Page title="Vista List" showNavButton="true" navButtonPress="onNavBack">
         <headerContent>
+            <Button text="Open Form" press="onOpenDialog"/>
             <core:Fragment fragmentName="appviewcatalog.view.fragments.ThemeButton" type="XML"/>
         </headerContent>
         <content>
