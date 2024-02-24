@@ -36,6 +36,15 @@
             "tiles-srv": {
                 "uri": "localservice/tiles.config.json",
                 "type": "JSON"
+            },
+            "mainService": {
+                "uri": "/V2/Northwind/Northwind.svc/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
             }
         }
     },
@@ -88,6 +97,10 @@
             "mTile": {
                 "type": "sap.ui.model.json.JSONModel",
                 "dataSource": "tiles-srv"
+            },
+            "mNorthwind": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "mainService"
             }
         },
         "resources": {

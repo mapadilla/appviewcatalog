@@ -44,6 +44,24 @@ sap.ui.define([
                 oBinding.filter(aFilters);
             },
 
+            onSearchNorthwind: function(oEvent){
+                let aFilters = [];
+                let sQuery = oEvent.getSource().getValue();
+
+                if(sQuery && sQuery.length > 0){
+                    let oFilter = new Filter({
+                        path: "ProductName",
+                        operator: FilterOperator.Contains,
+                        value1: sQuery
+                    });
+                    aFilters.push(oFilter);
+                }
+
+                let oList = this.byId("productList");
+                let oBinding = oList.getBinding("items"); 
+                oBinding.filter(aFilters);
+            },
+
             onOpenDialog: function(oEvent){
                 this.fDialog ??= this.loadFragment({
                     name: "appviewcatalog.view.fragments.DialogForm"

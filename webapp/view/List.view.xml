@@ -9,9 +9,10 @@
         <content>
             <VBox> 
                 <OverflowToolbar >
-                    <SearchField width="100%" liveChange=".onSearch" placeholder="Buscar..."/>
+                    <SearchField width="100%" liveChange="onSearchNorthwind" placeholder="Buscar..."/>
                 </OverflowToolbar>
-                    <List id="productList" headerText="Productos" 
+
+                    <!-- <List id="productList" headerText="Productos" 
                     items="{path:'mProduct>/ProductCollection'}" 
                     mode="SingleSelectMaster" 
                     itemPress="onPressProduct"
@@ -21,7 +22,14 @@
                     >
                         <StandardListItem title="{mProduct>Name}" description="{mProduct>Description}" 
                         icon="{mProduct>ProductPicUrl}" counter="{mProduct>Quantity}" type="Active"/>
-                    </List>
+                    </List> -->
+                    <List items="{path:'mNorthwind>/Products'}" 
+                        id="productList"
+                        growing="true"
+                        growingThreshold="20">
+
+                        <StandardListItem title="{mNorthwind>ProductID} - {mNorthwind>ProductName}"/>
+                    </List>     
             </VBox>
         </content>
     </Page>
