@@ -41,8 +41,6 @@
                 "uri": "V2/Northwind/Northwind.svc/",
                 "type": "OData",
                 "settings": {
-                    "annotations": [],
-                    "localUri": "localService/metadata.xml",
                     "odataVersion": "2.0"
                 }
             }
