@@ -14,7 +14,8 @@
         "@sap/ux-ui5-tooling": "^1.12.2",
         "@ui5/cli": "^3.0.0",
         "mbt": "^1.2.18",
-        "ui5-task-zipper": "^0.5.0"
+        "ui5-task-zipper": "^0.5.0",
+        "@sap/ux-ui5-fe-mockserver-middleware": "1"
     },
     "scripts": {
         "start": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#appviewcatalog-display\"",
@@ -35,7 +36,9 @@
         "dependencies": [
             "@sap/ui5-builder-webide-extension",
             "ui5-task-zipper",
-            "mbt"
+            "mbt",
+            "@sap/ux-ui5-tooling",
+            "@sap/ux-ui5-fe-mockserver-middleware"
         ]
     }
 }
