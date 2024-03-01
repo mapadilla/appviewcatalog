@@ -56,7 +56,6 @@ modules:
     commands:
     - npm install
     - npm run build:cf
-    - npm install --production
     supported-platforms: []
 resources:
 - name: appviewcatalog-destination-service
