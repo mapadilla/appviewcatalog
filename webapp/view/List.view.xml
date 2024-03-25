@@ -26,7 +26,7 @@
                     <List items="{path:'mNorthwind>/Products'}" 
                         id="productList"
                         growing="true"
-                        growingThreshold="20">
+                        growingThreshold="15">
 
                         <StandardListItem title="{mNorthwind>ProductID} - {mNorthwind>ProductName}"/>
                     </List>     
